@@ -6,7 +6,11 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @picture = Picture.new
+    if params[:back]
+      @picture = Picture.new(picture_params)
+    else
+      @picture = Picture.new
+    end
   end
 
   def create
@@ -23,11 +27,9 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
   end
 
   def edit
-    @picture = Picture.find(params[:id])
   end
 
   def update
@@ -41,7 +43,7 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to picture_path, notice: "投稿を削除しました！"
+    redirect_to pictures_path, notice: "投稿を削除しました！"
   end
 
   def confirm
@@ -52,7 +54,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:content)
+    params.require(:picture).permit(:content, :image, :image_cache)
   end
 
   def set_picture
