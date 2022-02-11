@@ -1,3 +1,5 @@
 <h1><%= @user.name %>の詳細ページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %>
