@@ -1,6 +1,6 @@
-class CreatePictutres < ActiveRecord::Migration[6.0]
+class CreatePictures < ActiveRecord::Migration[6.0]
   def change
-    create_table :pictutres do |t|
+    create_table :pictures do |t|
       t.text :content
       t.references :user, null: false, foreign_key: true
 
