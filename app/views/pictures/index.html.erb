@@ -1,22 +1,18 @@
 <h1>ブログ一覧</h1>
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>投稿者</th>
-    <th>内容</th>
-  </tr>
-
 <% @pictures.each do |picture| %>
-  <tr>
-    <td><%= picture.user.name %></td>
-    <td><%= picture.content %></td>
-
-    <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
-    <td><%= link_to "ブログを編集する", edit_picture_path(picture.id) %></td>
-    <td><%= link_to 'ブログを削除する', picture_path(picture.id), method: :delete %></td>
-  </tr>
+   <%= picture.user.name %>
+   <%= picture.content %>
+   <div class="image">
+    <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
+   </div>
+   <%= link_to '詳細を確認する', picture_path(picture.id) %>
+   <% if picture.user == current_user %>
+     <%= link_to "ブログを編集する", edit_picture_path(picture.id) %>
+     <%= link_to 'ブログを削除する', picture_path(picture.id), method: :delete %>
+   <% end %>
 <% end %>
-</table>
+
 
 <%= link_to '新しくブログを投稿する', new_picture_path %>
