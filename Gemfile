@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'pry-rails'
+gem 'rexml'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -31,7 +33,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'pry-rails'
+  
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
