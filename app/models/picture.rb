@@ -1,7 +1,9 @@
 class Picture < ApplicationRecord
   validates :content, presence: true
 
-  belongs_to :user
-
   mount_uploader :image, ImageUploader
+
+  belongs_to :user
+  has_many :favorites, dependent: :destroy
+   
 end
