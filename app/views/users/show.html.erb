@@ -1,5 +1,6 @@
 <h1><%= @user.name %>の詳細ページ</h1>
-
+<%= image_tag(@user.image.url) if @user.image && @user.image.url %>
 <p>メールアドレス: <%= @user.email %></p>
 
 <%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %>
+<%= link_to "投稿一覧", pictures_path %>
