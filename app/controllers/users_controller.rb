@@ -17,8 +17,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @favorite = current_user.favorite_pictures
+    @favorites = @user.favorite_pictures
   end
+
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.favorite_pictures
+  end
+  
 
   def edit
     @user = User.find(params[:id])
