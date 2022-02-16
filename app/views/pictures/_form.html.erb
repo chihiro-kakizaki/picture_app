@@ -1,27 +1,31 @@
 <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
-      <ul>
+    <% if @picture.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+        <ul>
 
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="picture_content">
+      <div class="past_image">
+      <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+      </div>
+      <div class="new_image">
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+      </div>
+      <div class="picture_text">
+        <%= form.label :投稿内容 %>
+        <%= form.text_field :content %>
+      </div>
+      <div class="picture_submit">
+        <%= form.submit %>
+      </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="picture_content"  </div>
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-  </div>>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-
-  <%= form.submit %>
-<% end %>
-
-<%= link_to "ブログ一覧画面にもどる", pictures_path %>
+  <%= link_to "投稿一覧", pictures_path,class:"btn_top btn btn-secondary btn-sm" %>
