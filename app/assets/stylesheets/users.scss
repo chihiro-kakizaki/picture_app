@@ -1,3 +1,20 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*ユーザープロフィールページ*/
+.mypage {
+  margin-top: 100px;
+}
+
+/*ユーザープロフィール編集ページ*/
+.profile_edit {
+  margin: 100px auto 20px auto;
+  width: 50%;
+  border: 3px #b8547d solid; 
+}
+
+.submit {
+  padding: 10px;
+}
+
+/*ユーザーお気に入りページ*/
+.favorite_page {
+  margin: 100px;
+}
