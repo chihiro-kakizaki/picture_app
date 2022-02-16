@@ -1,0 +1,11 @@
+<div class="favorite_page">
+  <h2><%= current_user.name %>お気に入り一覧</h2>
+
+  <div class="favorites">
+    <% @favorites.reverse_each do |list| %> 
+      <%= image_tag(list.image.url)  %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "プロフィールへ戻る", user_path(current_user.id),class:"back btn btn-secondary btn-sm"%>
