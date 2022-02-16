@@ -1,18 +1,21 @@
-<h1>ブログ一覧</h1>
-<p><%= notice %></p>
-
-<% @pictures.each do |picture| %>
-   <%= picture.user.name %>
-   <%= picture.content %>
-   <div class="image">
-    <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
-   </div>
-   <%= link_to '詳細を確認する', picture_path(picture.id) %>
-   <% if picture.user == current_user %>
-     <%= link_to "ブログを編集する", edit_picture_path(picture.id) %>
-     <%= link_to 'ブログを削除する', picture_path(picture.id), method: :delete %>
-   <% end %>
-<% end %>
-
-
-<%= link_to '新しくブログを投稿する', new_picture_path %>
+<h2>投稿一覧</h2>
+<div class="pictures">
+  <% @pictures.reverse_each do |picture| %>
+    <div class="main">
+      <%= picture.user.name %>
+      <br>
+        <%= picture.content %>
+      </br>
+      <div class="image">
+        <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
+      </div>
+      <div class="btn_menu">
+        <%= link_to '詳細', picture_path(picture.id), class:"show btn btn-secondary btn-sm" %>
+        <% if picture.user == current_user %>
+          <%= link_to "編集", edit_picture_path(picture.id),class:"edit btn btn-secondary btn-sm" %>
+          <%= link_to "削除", picture_path(picture.id), method: :delete ,class:"edit btn btn-secondary btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
