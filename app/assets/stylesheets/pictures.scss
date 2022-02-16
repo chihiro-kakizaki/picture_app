@@ -1,3 +1,86 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*共通ヘッダー部分(top_menu)*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.wrapper {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+ul {
+    padding:0;
+}
+
+header {
+  width: 100%;
+  background-color: #b8547d;
+  margin: auto;
+  height: 50px;
+  font-size: 15px;
+  
+}
+
+header ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+header ul a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+
+footer {
+  width: 100%;
+  background-color:#b8547d;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/*投稿一覧画面(top)部分*/
+.pictures {
+  width: 30%;
+  margin: auto;
+}
+
+.main {
+  text-align: center;
+  border: 3px #b8547d solid;  
+  border-radius: 20px;
+  margin:  15px 0;
+  padding: 15px;
+}
+
+.btn_menu {
+  margin-top: 10px;
+}
+
+/*新規投稿、投稿編集部分*/
+.post_edit {
+  margin: 100px auto;
+}
+
+.btn_top{
+  margin: 20px auto;
+}
+
+/*投稿詳細*/
+.picture_show {
+  margin-top: 100px;
+}
