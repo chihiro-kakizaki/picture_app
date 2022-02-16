@@ -7,7 +7,7 @@
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
   <%= form.hidden_field :image_cache %>
 
-  <%= form.submit  "登録する" %>
+  <br><%= form.submit  "登録する" %></br>
 <% end %>
 
 <%= form_with(model:@picture, url:new_picture_path, local:true, method:"get") do |form| %>
