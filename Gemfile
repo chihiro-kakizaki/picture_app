@@ -16,6 +16,7 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'rexml'
 gem 'letter_opener_web'
+gem 'faker'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
