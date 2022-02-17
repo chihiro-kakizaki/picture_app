@@ -5,4 +5,3 @@ class AddImageToUsers < ActiveRecord::Migration[6.0]
 end
 
 
-#https://git.heroku.com/enigmatic-meadow-71832.git
