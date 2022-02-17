@@ -2,8 +2,9 @@
   <h2>MyPage:<%= @user.name %></h2>
   <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
   <p>メールアドレス: <%= @user.email %></p>
-
+  <% if current_user == @user %>
   <%= link_to "プロフィール編集", edit_user_path(current_user.id),class:"edit btn btn-secondary btn-sm" %>
+  <% end %>
   <%= link_to "お気に入り一覧", favorites_user_path(current_user.id),class:"favorites btn btn-secondary btn-sm" %>
   <%= link_to "投稿一覧", pictures_path,class:"top btn btn-secondary btn-sm" %>
 </div>
