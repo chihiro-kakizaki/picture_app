@@ -25,9 +25,11 @@ class UsersController < ApplicationController
     @favorites = @user.favorite_pictures
   end
   
-
   def edit
     @user = User.find(params[:id])
+    if current_user != @user.id
+      redirect_to pictures_path
+    end
   end
 
   def update
